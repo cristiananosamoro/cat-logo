@@ -1,6 +1,5 @@
 package com.example.vitrine.service;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.ArrayList;
 
@@ -16,7 +15,7 @@ public class CatalogoService {
 
     public void salvar(Produto produto){
         if (produto.getId() == null) {
-            produto.setId(proximoId);
+            produto.setId(proximoId++);
             produtos.add(produto);
         }
         else{

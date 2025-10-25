@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Catalógo</title>
+    <title>Catalogo</title>
 </head>
 
 <body>
     <div class="container mt-5">
-        <a th:hreaf="@{/cadastro}" class="btn btn-sucess mb-4">Novo Produto</a>
+        <a th:hreaf="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
         <h1 class="mb-4">Vitrine de Produtos</h1>
         <form class="row mb-4" methood="GET" action="/">
-            <div class="form-group">
+            <div class="col-md-8">
                 <input type="text" class="form-control" name="busca"
-                    placeholder="Buscar pelo nome do produto......................." th:value="${termoBusca}">
+                    placeholder="Buscar pelo nome do produto..." th:value="${termoBusca}">
             </div>
 
             <div class=col-md-4>
@@ -27,11 +27,11 @@
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col" th:each="produto : ${produtos}">
                 <div class="card h-100 shadow-sm">
-                    <img th:src="@{$produto.urlImagem}" alt="Imagem do produto" class="card-img-top" style="height: 200px; object-fit:cover;">
+                    <img th:src="${produto.urlImagem}" alt="Imagem do produto" class="card-img-top" style="height: 200px; object-fit:cover;">
 
                     <div class="card-body">
                         <h5 class="card-title" th:text="${produto.nome}">Nome do Produto</h5>
-                        <p class="card-text-sucess fw-bold" th:text="${#numbers.formatCurrency(produto.preco)}">R$0,00</p>
+                        <p class="card-text-success fw-bold" th:text="${#numbers.formatCurrency(produto.preco)}">R$0,00</p>
                     </div>
                     <div class="card-footer">
                         <a th:href="@{/produto/{id}(id=${produto.id})}" class="btn btn-sm btn-outline-primary">Ver detalhes</a>

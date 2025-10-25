@@ -10,6 +10,9 @@ public class Produto {
     private BigDecimal preco;
     private String urlImagem;
     
+    public Produto(){
+    }
+    
     public Produto(Long id, String name, String descricao, BigDecimal preco, String urlImagem){
         this.id = id;
         this.name = name;

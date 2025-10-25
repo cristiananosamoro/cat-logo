@@ -11,9 +11,9 @@
 
 <body>
     <div class="container mt-5">
-        <a href="" class="btn btn-outline-secondary mb-4"> Voltar para o catálogo</a>
-        <h1>Cadastrar Novo Produto</h1>
-        <form action="" method="post">
+        <a th: href="@{/}" class="btn btn-outline-secondary mb-4"> Voltar para o catálogo</a>
+        <h1 th:text="${produto.id} ? 'Editar Produto' : 'Cadastrar NovoProduto'">Cadastrar Novo Produto</h1>
+        <form th:object="${produto}"th:action="@{/cadastro}" method="post">
             <input type="hidden">
             <div class="mb-3">
                 <label for="" class="form label">Nome do Produto</label>
