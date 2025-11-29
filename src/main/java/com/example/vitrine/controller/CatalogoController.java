@@ -54,6 +54,7 @@ public class CatalogoController {
             Model model) 
              {
                 model.addAttribute("produto", new Produto());
+                System.out.println("  ok   ");
             return "cadastro";
         }
         

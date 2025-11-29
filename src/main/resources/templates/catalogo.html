@@ -11,7 +11,7 @@
 
 <body>
     <div class="container mt-5">
-        <a th:hreaf="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
+        <a th:href="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
         <h1 class="mb-4">Vitrine de Produtos</h1>
         <form class="row mb-4" methood="GET" action="/">
             <div class="col-md-8">
@@ -30,7 +30,7 @@
                     <img th:src="${produto.urlImagem}" alt="Imagem do produto" class="card-img-top" style="height: 200px; object-fit:cover;">
 
                     <div class="card-body">
-                        <h5 class="card-title" th:text="${produto.nome}">Nome do Produto</h5>
+                        <h5 class="card-title" th:text="${produto.name}">Nome do Produto</h5>
                         <p class="card-text-success fw-bold" th:text="${#numbers.formatCurrency(produto.preco)}">R$0,00</p>
                     </div>
                     <div class="card-footer">

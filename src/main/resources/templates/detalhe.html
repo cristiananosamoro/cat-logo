@@ -23,9 +23,9 @@
                 <hr>
                 <p><strong>Código do produto:</strong><span>123</span></p>
 
-                <a href="" class="btn btn-warning btm-lg mt-3">Editar</a>
+                <a href="@{/produto/editar/{id}(id=${produto.id})}" class="btn btn-warning btm-lg mt-3">Editar</a>
                 
-                <form action="" style="display: inline-block; margin-left: 10px;">
+                <form th:action="@{/produto/excluir/{id}(id=${produto.id})}" style="display: inline-block; margin-left: 10px;">
                     <button class="btn btn-danger btn mt-3" type="submit">Excluir</button>
                 </form>
             </div>

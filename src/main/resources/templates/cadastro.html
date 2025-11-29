@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -11,27 +11,27 @@
 
 <body>
     <div class="container mt-5">
-        <a th: href="@{/}" class="btn btn-outline-secondary mb-4"> Voltar para o catálogo</a>
-        <h1 th:text="${produto.id} ? 'Editar Produto' : 'Cadastrar NovoProduto'">Cadastrar Novo Produto</h1>
-        <form th:object="${produto}"th:action="@{/cadastro}" method="post">
+        <a th:href="@{/}" class="btn btn-outline-secondary mb-4"> Voltar para o catálogo</a>
+        <h1 th:text="${produto.id} ? 'Editar Produto' : 'Cadastrar Novo Produto'">Cadastrar Novo Produto</h1>
+        <form th:object="${produto}" th:action="@{/cadastro}" method="post">
             <input type="hidden" th:field="*{id}">
             <div class="mb-3">
-                <label for="" class="form label">Nome do Produto</label>
-                <input id="nome" th:field="*{nome}" type="text" class="form-control" required>
+                <label for="" class="form-label">Nome do Produto</label>
+                <input id="name" th:field="*{name}" type="text" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="" class="form label">Preço</label>
+                <label for="" class="form-label">Preço</label>
                 <input th:field="*{preco}" id="preco" step="0.01" type="number" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="" class="form label">Descrição</label>
+                <label for="" class="form-label">Descrição</label>
                 <textarea name="" id="descricao" th:field="*{descricao}" class="form-control" rows="3" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="" class="form label">Imagem</label>
-                <input type="text" class="form-control" required placeholder="Ex: novo_produto.jpg">
+                <label for="" class="form-label">Imagem</label>
+                <input th:field="*{urlImagem}" type="text" class="form-control" required placeholder="Ex: novo_produto.jpg">
             </div>
-            <button class="btn btn-primary btn mt-4" type="submit">Salvar Produto</button>
+            <button type="submit" class="btn btn-success">Salvar Produto</button>
         </form>
     </div>
 </body>
